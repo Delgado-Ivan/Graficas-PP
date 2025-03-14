@@ -1,2 +1,2 @@
 # Graficas-PP
-Trabajo en teoría de Gráficas realizado en prácticas profesionales
+Trabajo en teoría de Gráficas realizado durante las prácticas profesionales
