@@ -55,16 +55,44 @@
 \section*{Definiciones}
 En este trabajo se consideran gráficas simples, finitas, sin lazos.
 \begin{definition}
-Una gráfica $G$ consta de dos conjuntos $G=(V,E)$, donde $V$ es un conjunto cualquiera y $E\subset \set{\left\{x,y\right\}\subset V}{x\neq y}$. El conjunto $V$ es llamado conjunto de vértices. Los elementos de E se llaman aristas.
+Una gráfica $G$ consta de dos conjuntos $G=(V,E)$, donde $V$ es un conjunto cualquiera y $E\subset \set{\left\{u,v\right\}\subset V}{u\neq v}$. El conjunto $V$ o $V(G)$ es llamado conjunto de vértices de la gráfica $G$. Los elementos de $E$ o $E(G)$ se llaman aristas de la gráfica $G$.
 \end{definition}
 
+\begin{definition}
+Sea $G=(V,E)$ una gráfica. Si $u,v\in V(G)$ son tal que $\left\{u,v\right\}\in E(G)$, decimos que $u$ y $v$ son adyacentes. Se denota tal adyacencia por $u\sim v$.
+\end{definition}
+
+\begin{definition}
+Sea $G$ una gráfica. Una subgráfica de $G$ es una gráfica $H$ tal que $V(H)\subset V(G)$ y $E(H)\subset E(G)$.
+\end{definition}
+
+\begin{definition}
+Sea $G$ una gráfica y $H$ una subgráfica de $G$. $H$ es una subgráfica inducida si para todo $u,v\in V(H)$ tales que $u\sim v$ en $G$ entonces $u\sim v$ en $H$.
+\end{definition}
+
+Se entiende que una subgráfica completa $H_n$ tiene cada par de sus $n$ vértices adyacentes. Dicha gráfica completa es maximal si no existe otro vértice en la gráfica tal que forme una completa más grande. Lo anterior da paso a la siguiente definición.
+
+\begin{definition}[\citealt{Harary:1969}]
+Un clan de $G$ es una subgráfica completa maximal. 
+\end{definition}
+
+\begin{definition}[\citealt{Roberts:1971}]
+Dado $G$ una gráfica, sean $C_1, C_2, \dots, C_n $ sus clanes. Definimos $H'$ mediante $ V(H') = \{C_1, C_2, \dots, C_n\}$ y $\left\{C_i, C_j\right\}\in E(H')$ si y solo si $i \neq j$ y $C_i \cap C_j \neq \emptyset$.  
+Entonces, llamamos a $H'$ como la gráfica de clanes de $G$ y escribimos $H'=K(G)$.
+\end{definition}
+
+\begin{definition}[\citealt{Alcon:2006}]
+Sea $G$ una gráfica y $v \in V(G)$. Como es habitual, $G-v$ denota la gráfica inducida por $V(G)\setminus \{v\}$.  
+
+El vértice $v$ es clan crítico si $K(G)\neq K(G-v)$. Una gráfica $G$ es clan crítica si cada uno de sus vértices es crítico.
+\end{definition}
 
 
 
 \section*{Resultados}
 
 \begin{theorem}
-	Sea $G$ una gráfica clan crítica tal que su gráfica de clanes es $k_3$, entonces $G$ es la gráfica 4,3 o 5,7.
+	Sea $G$ una gráfica clan crítica tal que su gráfica de clanes es $k_3$, entonces $G$ es la gráfica 4,3,3 o 5,7,1 (ver en \cite{Harary:1969} el apéndice de gráficas).
 \end{theorem}
 \begin{proof}
 Sea $G$ una gráfica clan crítica tal que $K(G)=k_3$.
