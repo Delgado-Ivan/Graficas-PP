@@ -95,7 +95,24 @@ El vértice $v$ es clan crítico si $K(G)\neq K(G-v)$. Una gráfica $G$ es clan 
 	Sea $G$ una gráfica clan crítica tal que su gráfica de clanes es $k_3$, entonces $G$ es la gráfica 4,3,3 o 5,7,1 (ver en \cite{Harary:1969} el apéndice de gráficas).
 \end{theorem}
 \begin{proof}
-Sea $G$ una gráfica clan crítica tal que $K(G)=k_3$.
+Sea $G$ una gráfica clan crítica tal que $K(G)=k_3$. Al ser $K(G)=k_3$ entonces existen $C_1,C_2,C_3$ clanes de $G$ tal que se intersectan de alguna manera.
+Sea $u_1$ el vértice de $G$ en el que se intersectan necesariamentenlos tres clanes de $G$, esto es así ya que, de no serlo, %explucacion
+
+Para dichas intersecciones, resultan los siguientes casos a considerar
+\begin{itemize}
+\item Caso 1. 
+Los clanes de $G$ se intersectan unicamente en el vértice $u_1$. De primera intancia los clanes $C_i$ con $i=1,2,3$ pueden ser tales que $|C_i|=n$ conciderando el vértice $u_1$ claramente; sin embargo, de considerar un $n>2$, la gráfica $G$ no cumpliría la condición de ser clan crítica, pues resultaria que $K(G)=K(G-\hat{u})$, para cualquier $\hat{u}\in V(C_i)$ y $\hat{u}\neq u_1$. Por lo tanto cada clan consta unicamente de dos vértices, uno de ellos $u_1$, con lo cual la gráfica $G=4,3,3$; la cual cumple que $K(4,3,3)=k_3$.
+
+\item Caso 2.
+Existe una intersección dos a dos, aparte del vértice $u_1$, entre los clanes. Sin pérdida de generalidad, supongamos que el clan $C_3$ intersecta al clan $C_1$ en un vértice $u_2\in V(G)$, así como a $C_2$ en un vértice $u_3\in V(G)$, esto es 
+\begin{equation*}
+\left\{u_2\right\}=(C_1\cap C_3)\setminus C_2 \quad \text{y} \quad \left\{u_3\right\}=(C_2\cap C_3)\setminus C_1.
+\end{equation*}
+Como se muestra en la figura
+
+\end{itemize}
+
+
 \end{proof}
 
 
