@@ -1,0 +1,86 @@
+\documentclass[12pt]{book}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[figuresright]{rotating}
+\usepackage{subfigure}
+\usepackage{epstopdf}
+\usepackage{float}
+\usepackage{natbib}
+\usepackage[skip=10pt,labelfont=bf,labelsep=period]{caption}
+\usepackage[paperwidth=215mm,paperheight=280mm,left=40mm,top=40mm,textwidth=150mm,textheight=215mm]{geometry} 
+\usepackage{fancybox}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{url} 
+\usepackage{newtxtext,newtxmath}
+\usepackage{bm}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{proposition}[theorem]{Proposición}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{Lem}[theorem]{Lema}
+\newtheorem{Cor}[theorem]{Corolario}
+\newtheorem{remark}[theorem]{Observación}
+\newtheorem{note}[theorem]{Nota}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator*{\argmax}{\arg\,\max}
+\usepackage{mathtools}
+\newcommand{\Op}[3]{\prescript{}{#2}{#1}^{#3}_{t}}
+\newcommand{\OpFull}[5]{\prescript{#1}{#2}{#3}^{#4}_{#5}}
+\spanishdecimal{.}
+
+%% Comandos basicos en el texto
+%% ==================================================================
+\newcommand{\set}[2]{\{#1\nonscript\;\vert\allowbreak\nonscript\:\mathopen{}#2\}}
+\usepackage{dsfont}
+
+\begin{document}
+\begin{titlepage}
+
+	\vfill
+
+	{\LARGE Trabajo en teoría de Gráficas}\\[2cm]
+
+	\vfill
+\end{titlepage}
+\section*{Definiciones}
+En este trabajo se consideran gráficas simples, finitas, sin lazos.
+\begin{definition}
+Una gráfica $G$ consta de dos conjuntos $G=(V,E)$, donde $V$ es un conjunto cualquiera y $E\subset \set{\left\{x,y\right\}\subset V}{x\neq y}$. El conjunto $V$ es llamado conjunto de vértices. Los elementos de E se llaman aristas.
+\end{definition}
+
+
+
+
+\section*{Resultados}
+
+\begin{theorem}
+	Sea $G$ una gráfica clan crítica tal que su gráfica de clanes es $k_3$, entonces $G$ es la gráfica 4,3 o 5,7.
+\end{theorem}
+\begin{proof}
+Sea $G$ una gráfica clan crítica tal que $K(G)=k_3$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+\bibliography{Ref}
+\bibliographystyle{apalike}
+
+\end{document}
