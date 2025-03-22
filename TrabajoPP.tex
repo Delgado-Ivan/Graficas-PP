@@ -91,17 +91,18 @@ El vértice $v$ es clan crítico si $K(G)\neq K(G-v)$. Una gráfica $G$ es clan 
 
 \section*{Resultados}
 
+En el siguiente teorema se consideran las gráficas $G(4,3,3)$, que denota a la gráfica con 4 vértices, 3 aristas, número 3; y la gráfica $G(5,7,1)$, que denota la gráfica de 5 vértices, 7 aristas, número 1. Dichas gráficas son extraidas del apéndice de gráficas en \cite{Harary:1969}.
 \begin{theorem}
-	Sea $G$ una gráfica clan crítica tal que su gráfica de clanes es $K_3$, entonces $G$ es la gráfica 4,3,3 ó 5,7,1 (ver en \cite{Harary:1969} el apéndice de gráficas).
+	Sea $G$ una gráfica clan crítica tal que su gráfica de clanes es $K_3$, entonces $G$ es la gráfica $G(4,3,3)$ ó $G(5,7,1)$.
 \end{theorem}
 \begin{proof}
-Sea $G$ una gráfica clan crítica tal que $K(G)=K_3$. Al ser $K(G)=K_3$ entonces existen $C_1,C_2,C_3$ clanes de $G$ tal que se intersectan de alguna manera.
-Sea $u_1$ el vértice de $G$ en el que se intersectan necesariamente los tres clanes de $G$, esto es así ya que, de no serlo, no se obtiene $K_3$ como su gráfica de clanes de $G$ y al mismo tiempo ésta sea clan crítica.
+Sea $G$ una gráfica clan crítica tal que $K(G)=K_3$. Al ser $K(G)=K_3$ entonces existen $C_1,C_2,C_3$ clanes de $G$ tal que se intersecan de alguna manera.
+Sea $u_1$ el vértice de $G$ en el que se intersecan necesariamente los tres clanes de $G$, esto es así ya que, de no serlo, no se obtiene $K_3$ como su gráfica de clanes de $G$ y al mismo tiempo ésta sea clan crítica.
 
 Para dichas intersecciones, resultan los siguientes casos a considerar.
 \begin{itemize}
 \item Caso 1. 
-Los clanes de $G$ se intersectan unicamente en el vértice $u_1$, como se muestra en la figura~\ref{F1}.
+Los clanes de $G$ se intersecan únicamente en el vértice $u_1$, es decir $C_1\cap C_2\cap C_3=\left\{u_1\right\}$ y $(C_1\cap C_3)\setminus C_2=\left\{\emptyset\right\}  \text{ y }(C_2\cap C_3)\setminus C_1=\left\{\emptyset\right\}$, como se muestra en la figura~\ref{F1}.
 
 \begin{figure}[!htbp]
 	\centering
@@ -109,11 +110,10 @@ Los clanes de $G$ se intersectan unicamente en el vértice $u_1$, como se muestr
 	\caption{Esquema de los clanes de la gráfica $G$ correspondiente al caso 1.\label{F1}}
 \end{figure}
 
-De primera intancia los clanes $C_i$ con $i=1,2,3$ pueden ser tales que $|C_i|=n$ conciderando el vértice $u_1$ claramente; sin embargo, de considerar un $n>2$, la gráfica $G$ no cumpliría la condición de ser clan crítica, pues resultaria que $K(G)=K(G-\hat{u})$, para cualquier $\hat{u}\in V(C_i)$ y $\hat{u}\neq u_1$. Por lo tanto cada clan consta unicamente de dos vértices, uno de ellos $u_1$, con lo cual la gráfica $G=4,3,3$; la cual cumple que $K(4,3,3)=K_3$.
+De primera instancia, los tres clanes pueden ser tales que $|C_i|=n$ con $i=1,2,3$, considerando el vértice $u_1$ claramente; sin embargo, de considerar un $n>2$, la gráfica $G$ no cumpliría la condición de ser clan crítica, pues resultaría que $K(G)=K(G-\hat{u})$, para cualquier $\hat{u}\in V(C_i)$ y $\hat{u}\neq u_1$. Por lo tanto cada clan consta únicamente de dos vértices, uno de ellos $u_1$, con lo cual la gráfica $G=G(4,3,3)$, la cual cumple que $K(G)=K_3$.
 
 \item Caso 2.
-Existe una intersección dos a dos, de más de un vértice, cons
-iderando claramente del vértice $u_1$, entre los clanes. Sin pérdida de generalidad, supongamos que el clan $C_3$ intersecta al clan $C_1$ en un vértice $u_2\in V(G)$, así como a $C_2$ en un vértice $u_3\in V(G)$, esto es 
+Existe una intersección dos a dos entre los clanes, de más de un vértice, considerando claramente el vértice $u_1$. Sin pérdida de generalidad, supongamos que el clan $C_3$ intersecta al clan $C_1$ en un vértice $u_2\in V(G)$, así como a $C_2$ en un vértice $u_3\in V(G)$, esto es 
 \begin{equation*}
 \left\{u_2\right\}=(C_1\cap C_3)\setminus C_2 \quad \text{y} \quad \left\{u_3\right\}=(C_2\cap C_3)\setminus C_1.
 \end{equation*}
@@ -125,11 +125,11 @@ Como se muestra en la figura~\ref{F2}.
 	\caption{Esquema de los clanes de la gráfica $G$ correspondiente al caso 2.\label{F2}}
 \end{figure}
 
-Los clanes $C_1,C_2$ no pueden ser clanes constituidos únicamente de dos vértices, pues de serlo, $E(G)=\left\{\left\{u_2,u_1\right\},\left\{u_1,u_3\right\},\left\{u_2,u_3\right\}\right\}$, es decir $G=K_3$, lo que implica que $K(G)\neq K_3$. Se considera que $|C_3|=3$, pues si no fuese así, no se satisfce la condicion de que $G$ es clan crítica, pensando en que $K(G-\hat{u})=K(G)$ para todo $\hat{u}\in V(C_3)$ distintos a $u_1,u_2,u_3$. Usando un razonamiento similar, es claro que los clanes $C_1$ y $C_2$ también satisfacen la propiedad que $|C_1|=|C_2|=3$. Por lo tanto, $G=5,7,1$ y es claro que $K(5,7,1)=K_3$.
+Los clanes $C_1,C_2$ no pueden ser clanes constituidos únicamente de dos vértices, pues de serlo, $E(G)=\left\{\left\{u_2,u_1\right\},\left\{u_1,u_3\right\},\left\{u_2,u_3\right\}\right\}$, es decir $G=K_3$, lo que implica que $K(G)\neq K_3$. Se considera que $|C_3|=3$, pues si no fuese así, no se satisfce la condicion de que $G$ es clan crítica, pensando en que $K(G-\hat{u})=K(G)$ para todo $\hat{u}\in V(C_3)$ distintos a $u_1,u_2,u_3$. Usando un razonamiento similar, es claro que los clanes $C_1$ y $C_2$ también satisfacen la propiedad que $|C_1|=|C_2|=3$. Por lo tanto, $G=G(5,7,1)$ y es claro que $K(G)=K_3$.
 
 
 \item Caso 3.
-Todos los clanes se intersectan en el vértice $u_1$ y sólo existe otra intersección entre dos de estos clanes. Sin pérdida de generalidad supongamos que los clanes $C_1$ y $C_3$ se intersectan en un vértice $u_2$ y $C_3\cap C_2=\left\{u_1\right\}$ únicamente, como se muestra en la figura~\ref{F3}.
+Todos los clanes se intersecan en el vértice $u_1$ y sólo existe otra intersección entre dos de estos clanes. Sin pérdida de generalidad supongamos que los clanes $C_1$ y $C_3$ se intersecan en un vértice $u_2$ y $(C_2\cap C_3)\setminus C_1=\left\{\emptyset\right\}$, como se muestra en la figura~\ref{F3}.
 
 \begin{figure}[!htbp]
 	\centering
@@ -151,10 +151,10 @@ En tal caso se cumple que $K(G-u_2)=K(G)$, situación que no es válida. Con lo 
 El vértice $u_3\notin V(C_2)$. Se cumple la propiedad que para todo $\overline{u}\in V(C_2)$ distintos al vértice $u_1$, resulta que $K(G-\overline{u})=K(G)$, lo que implica que este caso no es posible.
 
 \item Caso 3.2.
-El vértice $u_3\in V(C_2)$. Este caso se reduce al caso 2, con lo cual $G=5,7,1$ y por lo tanto $K(5,7,1)=K_3$.
+El vértice $u_3\in V(C_2)$. Este caso se reduce al caso 2, con lo cual $G=G(5,7,1)$ y por lo tanto $K(G)=K_3$.
 \end{itemize}
 \end{itemize}
-Resulta entonces que $G$ es la gráfica 4,3,3 ó 5,7,1.
+Resulta entonces que $G$ es la gráfica $G(4,3,3)$ ó $G(5,7,1)$.
 \end{proof}
 
 
