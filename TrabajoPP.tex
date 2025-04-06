@@ -70,7 +70,15 @@ Un camino de una gráfica $G$, es una sucesión de vértices $u_0,u_1,\dots,u_{n
 \begin{definition}[\citealt{Harary:1969}]
 Una gráfica es conexa si cada par de vértices está unido por un camino.
 \end{definition}
-Se define una gráfica disconexa si no es conexa.
+Se define una gráfica disconexa, a la gráfica que no es conexa.
+
+\begin{definition}
+Sea $G$ una gráfica. Un ciclo de G es un $uv-$camino que es cerrado, es decir, que se satisface que $u=v$.
+\end{definition}
+
+\begin{definition}[\citealt{Harary:1969}]
+Una gráfica es acíclica si no tiene ciclos. Un árbol es una gráfica acíclica conexa. 
+\end{definition}
 
 \begin{definition}
 Sea $G$ una gráfica. Una subgráfica de $G$ es una gráfica $H$ tal que $V(H)\subset V(G)$ y $E(H)\subset E(G)$.
@@ -199,7 +207,7 @@ En el siguiente teorema se consideran las gráficas $G(3)$ y $G(4)$ que denotan 
 	\caption{Esquema de las gráficas $G(3)$ (izquierda) y $G(4)$ (derecha), con sus respectivas etiquetas de acuerdo a sus vértices.\label{F5}}
 \end{figure}
 
-\begin{theorem}
+\begin{theorem}\label{T1.12}
 Sea $G$ una gráfica clan crítica tal que su gráfica de clanes es $G(3)$, entonces $G$ es la gráfica $G(4)$.
 \end{theorem}
 
@@ -207,7 +215,7 @@ Sea $G$ una gráfica clan crítica tal que su gráfica de clanes es $G(3)$, ento
 Sea $G$ una gráfica clan crítica tal que $K(G)=G(3)$. La igualdad anterior implica directamente que existen únicamente tres clanes $q_1$, $q_2$ y $q_3$ tal que $q_1\cap q_3=\emptyset$. Dichos clanes están representados como los vértices de $G(3)$, ver figura~\ref{F5}.
 Notemos que el clan $q_2$ tiene intersección no vacía con $q_1$ y $q_3$. A continuación se muestra un argumento con el cual es posible afirmar que en las intersecciones $q_1\cap q_2$ y $q_3\cap q_2$ constan únicamente de un vértice $u_2$ y $u_3$ de $G$, respectivamente.
 
-Supongamos que existen $n$ vértices $\{v_1,\dots,v_n\}$ en $q_1\cap q_2$ con $n>1$, con lo cual se cumplen las siguientes contenciones $\{v_1,\dots,v_n\}\subset q_1 $ y $\{v_1,\dots,v_n\}\subset q_2$, lo que implica que los vértices $\{v_1,\dots,v_n\}$ son mutuamente adyacentes entre sí, lo que forma un nuevo clan de $G$, de esta manera no se cumpliría que su gráfica de clanes fuese $G(3)$, pues tendría más de tres vértices su gráfica de clanes. Por lo tanto se satisface que 
+Supongamos que existen $n$ vértices $\{v_1,\dots,v_n\}$ en $q_1\cap q_2$ con $n>1$, con lo cual se cumplen las siguientes contenciones $\{v_1,\dots,v_n\}\subset q_1 $ y $\{v_1,\dots,v_n\}\subset q_2$, lo que implica que los vértices $\{v_1,\dots,v_n\}$ son mutuamente adyacentes entre sí, lo que formaría un nuevo clan de $G$, de esta manera no se cumpliría que su gráfica de clanes fuese $G(3)$, pues tendría más de tres vértices su gráfica de clanes, esta contradicción viene del hecho de suponer la existencia de $n$ vértices en $q_1\cap q_2$ con $n>1$, con lo cual tiene que ser $n=1$. Por lo tanto se satisface que 
 \begin{equation*}
 \{u_2\}=q_1\cap q_2.
 \end{equation*}
@@ -216,7 +224,10 @@ Con un razonamiento análogo, se demuestra que de igual manera se satisface que
 	\{u_3\}=q_3\cap q_2.
 \end{equation*}
 
-Por otra parte, lo que sigue es un razonamiento que demuestra que el clan $q_1$ está constituido de solo dos vértices, el ya mencionado $u_2$ y uno más $u_1$ en G; de igual manera el clan $q_3$ está constituido por el mencionado vértice $u_3$ y uno más $u_4$ en $G$. Demostraremos estos hechos para el caso del clan $q_1$, pues como anteriormente sucedió, el caso para la demostración del clan $q_3$ resultará análogo a la prueba del $q_1$. Así pues, consideremos que el clan $q_1$ está constituido por más de dos vértices, digamos $V(q_1)=\{v_1,\dots v_n\}$. Por ser un clan $q_1$, resulta que $q_1-v_i$ es un clan también, para cualquier $i\in \{1,\dots,n\}$, con lo cual, cualquier eliminación de $V(q_1)$, excepto $u_2$, no provoca un cambio en la estructura de su gráfica de clanes, lo que contradiría la hipótesis de clan crítica. Por lo tanto se requiere que $q_1$ tenga la menor cantidad de vértices posibles y que siga siendo un clan, por lo tanto sólo consta de dos vértices, $u_2$ y uno más llamemosle $u_1$, como se quería. De esta manera, también $q_3$ consta únicamente de dos vértices, $u_3$ y uno más, llamemosle $u_4$.
+Por otra parte, lo que sigue es un razonamiento que demuestra que el clan $q_1$ está constituido de solo dos vértices, el ya mencionado $u_2$ y uno más en G; de igual manera el clan $q_3$ está constituido por el mencionado vértice $u_3$ y uno más en $G$. Demostraremos estos hechos para el caso del clan $q_1$, pues como anteriormente sucedió, el caso para la demostración del clan $q_3$ resultará análogo a la prueba del $q_1$. 
+
+
+Así pues, consideremos que el clan $q_1$ está constituido por más de dos vértices, digamos $V(q_1)=\{v_1,\dots v_n\}$. Por ser un clan $q_1$, resulta que $q_1-v_i$ es un clan también, para cualquier $i\in \{1,\dots,n\}$, con lo cual, cualquier eliminación de $V(q_1)$, excepto $u_2$, no provoca un cambio en la estructura de su gráfica de clanes, lo que contradiría la hipótesis de clan crítica. Por lo tanto se requiere que $q_1$ tenga la menor cantidad de vértices posibles y que siga siendo un clan, por lo tanto sólo consta de dos vértices, $u_2$ y uno más llamemosle $u_1$. De esta manera, también $q_3$ consta únicamente de dos vértices, $u_3$ y uno más, llamemosle $u_4$.
 
 De acuerdo con el razonamiento planteado anteriormente, el clan $q_2$ también debe de constar únicamente de dos vértices, pues de ser más, se contradice la hipótesis de ser $G$ clan crítica. Con lo cual, se puede concluir que $G$ es un camino de cuatro vértices, es decir, $G=G(4)$.
 \end{proof}
@@ -232,6 +243,47 @@ El siguiente teorema es una generalización del teorema anterior, se consideran 
 \begin{theorem}
 Sea $G$ una gráfica clan crítica tal que su gráfica de clanes es $G(n-1)$, entonces $G$ es la gráfica $G(n)$.
 \end{theorem}
+
+\begin{proof}
+Por hipótesis $K(G)=G(n-1)$, lo que implica que en $G$ existen $n-1$ clanes diferentes, que satisfacen $q_{k-1}\cap q_{k+1}=\emptyset$ para $k\in\{2,\dots n-2\}$; que representan los vértices de $G(n-1)$, como se muestra en la figura~\ref{F6} (izquierda).
+
+Notemos que cada vértice en $G(n-1)$, que representa un clan de $G$, es adyacente con el vértice inmediato anterior y el inmediato siguiente. En el caso del primer vértice, adyacente con el inmediato siguiente; y en el caso del último vértice, adyacente con el inmediato anterior. Esto es que las intersecciones $q_1\cap q_2$, $q_2\cap q_3$, $\dots$ , $q_{n-3}\cap q_{n-2}$, $q_{n-2}\cap q_{n-1}$ son no vacías. Utilizando el mismo razonamiento expuesto en el teorema~\ref{T1.12}, se muestra que cada una de estas intersecciones es un único vértice, es decir
+\begin{equation*}
+\begin{aligned}
+q_1\cap q_2 &= \{u_2\} \\
+q_2\cap q_3 &= \{u_3\} \\
+\vdots \\
+q_{n-3}\cap q_{n-2} &= \{u_{n-2}\} \\
+q_{n-2}\cap q_{n-1} &= \{u_{n-1}\}.
+\end{aligned}
+\end{equation*}
+
+Por otra parte, de igual manera como se hizo en el teorema~\ref{T1.12}, se demostrará que el clan $q_1$ está constituido de solo dos vértices, el ya mencionado $u_2$ y uno más en G; de igual manera el clan $q_{n-1}$ está constituido por el mencionado vértice $u_{n-1}$ y uno más en $G$. Demostraremos estos hechos para el caso del clan $q_1$, pues el caso para la demostración del clan $q_{n-1}$ resultará análogo a la prueba del $q_1$. 
+
+Consideremos que el clan $q_1$ está constituido por más de dos vértices, digamos $V(q_1)=\{v_1,\dots v_n\}$. Por ser un clan $q_1$, resulta que $q_1-v_i$ es un clan también, para cualquier $i\in \{1,\dots,n\}$, con lo cual, cualquier eliminación de $V(q_1)$, excepto $u_2$, no provoca un cambio en la estructura de su gráfica de clanes, lo que contradiría la hipótesis de clan crítica, por lo tanto sólo consta de dos vértices, $u_2$ y uno más llamemosle $u_1$, pues de esta manera la eliminación de dicho vétice $u_1$ provoca un cambio en la estructura de la gráfica de clanes de $G$, cumpliendo las hipótesis de ser clan crítica. 
+De esta manera, también $q_{n-1}$ consta únicamente de dos vértices, $u_{n-1}$ y uno más, llamemosle $u_n$.
+
+De acuerdo con el razonamiento planteado anteriormente, los clanes $q_2$, $q_3$, $\dots$ , $q_{n-3}$, $q_{n-2}$ también deben de constar únicamente de dos vértices, pues de ser más, se contradice la hipótesis de ser $G$ clan crítica, como se mostró. Con lo cual, se puede concluir que $G$ es un camino de $n$ vértices, es decir, $G=G(n)$.
+\end{proof}
+
+El siguiente teorema hace referencia la relación que existe entre la gráfica $G(6,6,18)$ y el árbol $T(4,2)$, extraídos del apéndice de gráficas y de diagramas de árbol en \cite{Harary:1969}, respectivamente. Dichas gráficas pueden verse en la figura~\ref{F7}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[scale=1.2]{Fig7.pdf}
+	\caption{Esquema de las gráficas $T(4,2)$ (izquierda) y $G(6,6,18)$ (derecha).\label{F7}}
+\end{figure}
+
+\begin{theorem}
+Sea $G$ una gráfica clan crítica tal que su gráfica de clanes es $T(4,2)$, entonces $G$ es la gráfica $G(6,6,18)$.
+\end{theorem}
+
+\begin{proof}
+Sea $G$ una gráfica clan crítica tal que su gráfica de clanes es $T(4,2)$. Con lo cual, la gráfica $G$ debe tener cuatro clanes, 
+\end{proof}
+
+
+
 
 
 
