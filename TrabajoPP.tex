@@ -129,7 +129,7 @@ q_i\cap q_j\neq \emptyset, \quad \forall i,j\in\{1,2,3\},\quad i\neq j.
 \end{equation*}
 A continuación se muestra que existe un vértice $u_1$ de $G$, en el que se intersecan necesariamente los tres clanes de $G$, es decir $\{u_1\}\subset q_1\cap q_2 \cap q_3$. 
 
-Supongamos que no existe un vértice $u_1$ que pertenezca simultáneamente a los tres clanes, es decir  $q_1\cap q_2 \cap q_3=\emptyset$. Bajo este supuesto, cada intersección $q_i\cap q_j$, $i\neq j$, contiene al menos un vértice, pero no hay un vértice común a todos. Esto significa que podemos elegir un vértice en una de estas intersecciones y eliminarlo sin afectar la estructura de $K(G)$ , ya que los otros clanes seguirán intersecándose en otros vértices. Esto contradice la propiedad de clan crítica, pues existiría un vértice cuya eliminación no cambiaría la gráfica de clanes.
+Supongamos que no existe un vértice $u_1$ que pertenezca simultáneamente a los tres clanes, es decir  $q_1\cap q_2 \cap q_3=\emptyset$. Bajo este supuesto, cada intersección $q_i\cap q_j$, $i\neq j$, contiene al menos un vértice, pero no hay un vértice común a todos. Sea $x_{ij}\in q_{i}\cap q_{j}$. Entonces $\{x_{12},x_{13},x_{23}\}$ forman una completa que se puede extender a un clan $q$. El clan $q$ es diferente de $q_{1},q_{2},q_{3}$ (pues, por ejemplo, $x_{23}\in q$ pero $x_{23}\not\in q_{1}$ por la condición de que $q_{1}\cap q_{2}\cap q_{3}=\emptyset$), lo cual contradice que $G$ sólo tenía los tres clanes $q_{1},q_{2},q_{3}$. 
 Por lo tanto, necesariamente debe existir al menos un vértice $u_1$ tal que
 \begin{equation*}
 \{u_1\}\subset q_1\cap q_2 \cap q_3.
