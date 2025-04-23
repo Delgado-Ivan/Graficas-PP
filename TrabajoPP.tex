@@ -320,6 +320,29 @@ El siguiente teorema considera el árbol $T(5,3)$ expuesto en el apéndice de di
 Sea $G$ una gráfica clan crítica tal que su gráfica de clanes es $T(5,3)$, entonces $G$ es la gráfica $G(8,10)$.
 \end{theorem}
 
+\begin{proof}
+Sea $G$ una gráfica clan crítica tal que $K(G)=T(5,3)$, $K(G)$ tiene como vértices $q_1,q_2,q_3,q_4$ que representan los clanes de $G$, como se muestra en la figura~\ref{F9}. Dichos clanes cumplen las siguientes propiedades: el clan $q_i$, con $i\in \{2,3,4,5\}$, tiene intersección vacía con todos los clanes excepto con $q_1$, con lo cual la intersección de $q_1$ con cualquier clan es no vacía. 
+A continuación se demostrará que cada una de estas intersecciones $q_1\cap q_i$ consta de un único vértice. La prueba es análoga para cada $i$, sin pérdida de generalidad consideraremos $i=2$, es decir, se demostrará que la intersección $q_1\cap q_2$ consta de un solo vértice $u_{12}$ y de esta manera concluir lo mismo con los demás clanes.
+
+Sea $u_{13}\in q_1\cap q_3$. Supongamos que existen $n$ vértices en $q_1\cap q_2$ con $n>1$, es decir $q_1\cap q_2=\{v_1,\dots,v_n\}$. A partir de esto, se satisfacería que $\{v_1,\dots,v_n\}\subset q_1$ y $\{v_1,\dots,v_n\}\subset q_2$, por lo tanto dicho conjunto formaría una completa que se puede extender a un clan $q$ distinto a los demás clanes pues por ejemplo $u_{13}\in q_1$ pero $u_{13}\notin q_1\cap q_2$, con lo cual $u_{13}\notin q$ y así $q\neq q_1$, de la misma manera se verifica inmediatamente que $q$ es distinto a los demás clanes; lo que contradiría el hecho de que $K(G)=T(5,3)$ pues existirían al menos seis clanes. Dicha contradicción surge del hecho de considerar $n>1$, con lo cual $n=1$ y entonces
+\begin{equation*}
+q_1\cap q_2=u_{12}.
+\end{equation*}
+Como se dijo, de manera análoga, se concluye que 
+\begin{equation*}
+\begin{aligned}
+	q_1\cap q_3 &= u_{13} \\
+	q_1\cap q_4 &= u_{14} \\
+	q_1\cap q_5 &= u_{15} .
+\end{aligned}
+\end{equation*}
+Por el hecho que el clan $q_i$, con $i\in \{2,3,4,5\}$, tiene intersección vacía con todos los clanes excepto con $q_1$, los vértices anteriores son todos distintos.
+
+
+
+
+\end{proof}
+
 
 
 
