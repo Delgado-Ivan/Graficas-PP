@@ -48,66 +48,142 @@
 
 	\vfill
 
-	{\LARGE Trabajo en teoría de Gráficas}\\[2cm]
+	{\LARGE Clasificación de gráficas de clanes pequeñas}\\[2cm]
 
 	\vfill
 \end{titlepage}
 \chapter{Gráficas clan críticas y gráficas de clanes}
 \section{Definiciones}
-En este trabajo se consideran gráficas simples, finitas, sin lazos y conexas.
+
 \begin{definition}
-Una gráfica $G$ consta de dos conjuntos $G=(V,E)$, donde $V$ es un conjunto cualquiera y $E\subset \set{\left\{u,v\right\}\subset V}{u\neq v}$. El conjunto $V$ o $V(G)$ es llamado conjunto de vértices de la gráfica $G$. Los elementos de $E$ o $E(G)$ se llaman aristas de la gráfica $G$.
+Una \emph{gráfica} $G$ consta de dos conjuntos $G=(V,E)$, donde $V$ es un conjunto cualquiera y $E\subset \set{\left\{u,v\right\}\subset V}{u\neq v}$. El conjunto $V$ o $V(G)$ es llamado conjunto de vértices de la gráfica $G$. Los elementos de $E$ o $E(G)$ se llaman aristas de la gráfica $G$.
 \end{definition}
 
 \begin{definition}
 Sea $G=(V,E)$ una gráfica. Si $u,v\in V(G)$ son tal que $\left\{u,v\right\}\in E(G)$, decimos que $u$ y $v$ son adyacentes. Se denota tal adyacencia por $u\sim v$.
 \end{definition}
 
-\begin{definition}[\citealt{Harary:1969}]
-Un camino de una gráfica $G$, es una sucesión de vértices $u_0,u_1,\dots,u_{n-1},u_n$, tales que existe una adyacencia de cada uno de los vértices con el vértice inmediato anterior y el inmediato siguiente. Se suele denotar tal camino como $u_0u_n-$camino.
-\end{definition}
-
-\begin{definition}[\citealt{Harary:1969}]
-Una gráfica es conexa si cada par de vértices está unido por un camino.
-\end{definition}
-Se define una gráfica disconexa, a la gráfica que no es conexa.
-
 \begin{definition}
-Sea $G$ una gráfica. Un ciclo de G es un $uv-$camino que es cerrado, es decir, que se satisface que $u=v$.
-\end{definition}
-
-\begin{definition}[\citealt{Harary:1969}]
-Una gráfica es acíclica si no tiene ciclos. Un árbol es una gráfica acíclica conexa. 
+Un \emph{camino} de una gráfica $G$, es una sucesión de vértices $u_0,u_1,\dots,u_{n-1},u_n$, tales que existe una adyacencia de cada uno de los vértices con el vértice inmediato anterior y el inmediato siguiente. Se suele denotar tal camino como $u_0u_n-$camino.
 \end{definition}
 
 \begin{definition}
-Sea $G$ una gráfica. Una subgráfica de $G$ es una gráfica $H$ tal que $V(H)\subset V(G)$ y $E(H)\subset E(G)$.
+Una gráfica es \emph{conexa} si cada par de vértices está unido por un camino.
+\end{definition}
+Se define una gráfica \emph{disconexa}, a la gráfica que no es conexa.
+
+\begin{definition}
+Sea $G$ una gráfica. Un \emph{ciclo} de G es un $uv-$camino que es cerrado, es decir, que se satisface que $u=v$.
 \end{definition}
 
 \begin{definition}
-Sea $G$ una gráfica y $H$ una subgráfica de $G$. $H$ es una subgráfica inducida si para todo $u,v\in V(H)$ tales que $u\sim v$ en $G$ entonces $u\sim v$ en $H$.
+Una gráfica es \emph{acíclica} si no tiene ciclos. Un \emph{árbol} es una gráfica acíclica conexa. 
 \end{definition}
 
-Se entiende que una subgráfica completa $H_n$ tiene cada par de sus $n$ vértices adyacentes. Dicha gráfica completa es maximal si no existe otro vértice en la gráfica tal que forme una completa más grande. Lo anterior da paso a la siguiente definición.
-
-\begin{definition}[\citealt{Harary:1969}]
-Un clan de $G$ es una subgráfica completa maximal. 
+\begin{definition}
+Sea $G$ una gráfica. Una \emph{subgráfica} de $G$ es una gráfica $H$ tal que $V(H)\subset V(G)$ y $E(H)\subset E(G)$.
 \end{definition}
 
-\begin{definition}[\citealt{Roberts:1971}]
+\begin{definition}
+Sea $G$ una gráfica y $H$ una subgráfica de $G$. $H$ es una \emph{subgráfica inducida} si para todo $u,v\in V(H)$ tales que $u\sim v$ en $G$ entonces $u\sim v$ en $H$.
+\end{definition}
+
+\begin{definition}
+Se entiende que una subgráfica completa $H_n$ tiene cada par de sus $n$ vértices adyacentes. Dicha gráfica completa es \emph{maximal} si no existe otro vértice en la gráfica tal que forme una completa más grande.
+\end{definition}
+
+\begin{definition}
+Un \emph{clan} de $G$ es una subgráfica completa maximal. 
+\end{definition}
+
+\begin{definition}[\citealt{Hamelink:1968}]
 Dado $G$ una gráfica, sean $q_1, q_2, \dots, q_n $ sus clanes. Definimos $H'$ mediante $ V(H') = \{q_1, q_2, \dots, q_n\}$ y $\left\{q_i, q_j\right\}\in E(H')$ si y solo si $i \neq j$ y $q_i \cap q_j \neq \emptyset$.  
-Entonces, llamamos a $H'$ como la gráfica de clanes de $G$ y escribimos $H'=K(G)$.
+Entonces, llamamos a $H'$ como la \emph{gráfica de clanes} de $G$ y escribimos $H'=K(G)$.
 \end{definition}
 
-\begin{definition}[\citealt{Alcon:2006}]
+\begin{definition}
 Sea $G$ una gráfica y $v \in V(G)$. Como es habitual, $G-v$ denota la gráfica inducida por $V(G)\setminus \{v\}$.  
 \end{definition}
 
 \begin{definition}[\citealt{Escalante:1974}]
-El vértice $v$ es clan crítico si $K(G)\neq K(G-v)$. Una gráfica $G$ es clan crítica si cada uno de sus vértices es crítico.
+Un vértice $v$ es \emph{clan crítico} si $K(G)\neq K(G-v)$. Una gráfica $G$ es \emph{clan} crítica si cada uno de sus vértices es crítico.
 \end{definition}
 
+\section{Preliminares}
+En este trabajo se consideran gráficas simples, finitas, sin lazos y conexas.
 
+\begin{proposition}[\citealt{Escalante:1974}]\label{P1.14}
+Sea $G$ una gráfica y $u$ un vértice de $G$. $K(G-u)$ no tiene más clanes que $K(G)$, mas precisamente, cualquier clan de $G-u$ es de la forma $q-u$ para $q\in K(G)$.
+\end{proposition}
+
+\begin{proof}
+Sea $q'$ un clan de $G-u$, entonces $q'$ es una completa en $G$. Sea $q$ un clan de $G$ tal que $q'\subseteq q$. Por demostrar que $q'=q-u$.
+
+Si $q'\neq q$ entonces $q'$ no es un clan en $G$, por lo tanto existe un vértice $v\in G$ tal que $q' \cup \{v\}$ es una completa. Ahora bien, si $v\neq u$ entonces $q'\subseteq q' \cup \{v\}$ en $G-u$, lo cual es una contradicción, pues $q'$ es un clan en $G-u$, por lo tanto $v=u$. De esta manera el único vértice $v\in G$ que puede ser añadido a $q'$ de tal manera que $q'\cup \{v\}$ sea una completa es $u$, entonces $q'\cup \{u\}$ es un clan de $G$.
+Veamos hora que cualquier vértice $v'$ en $q-q'$ tiene la propiedad de que $q'\cup \{v'\}$ es una completa de $G$. Sin embargo, por otro lado como se mostró anteriormente, el único vértice con tal propiedad es $u$, por lo tanto, $q-q'=\{u\}$, es decir, $q=q'\cup\{u\}$.
+
+Definamos ahora una función $\psi:K(G-u)\to K(G)$ tal que $\psi(q')=q$. Por demostrar que la función $\psi$ es inyectiva, consideremos un nuevo clan $q''$ en $G-u$ tal que $q''\subseteq q$ en $G$. Si $\psi(q')=\psi(q'')=q$, demostraremos que $q'=q''$. Supongamos que $q'\neq q''$, resultan los siguientes casos:
+\begin{enumerate}
+\item El vértice $u\in q$, resulta que $q'=q\setminus \{u\}$, por otra parte como $q''$ es un clan de $G-u$, entonces $q''=q-u$ y por lo tanto $q'=q''$, lo cual es una contradicción, pues se había supuesto que $q'\neq q''$.
+\item El vértice $u \notin q$, con lo cual resulta de manera inmediata que $q'=q$ y $q''=q$, entonces $q'=q''$, contradicción, pues se supuso que $q'\neq q''$.
+\end{enumerate}
+Por lo tanto $q'=q''$ y con lo cual $\psi$ es inyectiva.
+
+Por otro lado, supongamos que $q'\sim q''$, es decir $q'\cap q''\neq\emptyset$ en $K(G-u)$. Observemos que $q'\subseteq\psi(q')$, pues $\psi(q')=q$ y ya se demostró que $q=q'\cup\{u\}$; de la misma manera $q''\subseteq\psi(q'')$, por lo tanto $q'\cap q''\subseteq\psi(q')\cap\psi(q'')$, con lo cual $\psi(q')\cap\psi(q'')\neq\emptyset$, por lo tanto $\psi(q')\sim\psi(q'')$ en $K(G)$. De esta manera se muestra que la función $\psi$ preserva adyacencias.
+
+\end{proof}
+
+\begin{Lem}
+Sea $G$ una gráfica clan crítica. Sean $q_1,q_2$ dos clanes diferentes de $G$. Entonces el conjunto de vértices que está en $q_1\cap q_2$ y en ningún otro clan debe constar de como mucho de un solo vértice.
+\end{Lem}
+
+\begin{proof}
+Sean $q_1,q_2$ dos clanes diferentes de $G$ y $u_1,u_2$ vértices tales que $u_1,u_2\in q_1\cap q_2$ y que no pertenecen a ningún otro clan, con $u_1\neq u_2$. Por demostrar que $q_1-u_2$ y $q_2-u_2$ siguen siendo clanes diferentes en $G-u_2$.
+
+Sea $q_3$ un clan de $G$ tal que $q_3\notin \{q_1,q_2\}$. Si suponemos que $q_1-u_2\subseteq q_3$, entonces $u_1\in q_3$, pues $u_1 \in q_1-u_2$, lo que es una contradicción, dado que $u_1$ solo pertenece a los clanes $q_1,q_2$. Por otra parte, notemos que de acuerdo a la proposición~\ref{P1.14}, $q_1-u_2,q_2-u_2$ son clanes de $G-u_2$. Ahora bien, si 
+\begin{equation*}
+q_1-u_2\subseteq q_2-u_2,
+\end{equation*}
+entonces 
+\begin{equation*}
+\begin{aligned}
+(q_1-u_2)\cup\{u_2\} &\subseteq (q_2-u_2)\cup\{u_2\},\quad\text{por lo tanto} \\
+q_1 &\subseteq q_2.
+\end{aligned}
+\end{equation*}
+Lo que supone una contradicción, pues $q_1,q_2$ son clanes distintos de $G$. De esta manera $q_1-u_2,q_2-u_2$ son clanes distintos de $G-u_2$.
+
+Por otra parte, sea $\psi:K(G-u_2)\to K(G)$ tal que $\psi(q')=q$ y $q',q''$ clanes distintos de $G-u_2$. Por demostrar que $\psi$ es un morfismo de gráficas y además se satisface que $q'\sim q''$ si, y solo si, $\psi(q')\sim\psi(q'')$.
+
+En la proposición~\ref{P1.14} ya se demostró que si $q'\sim q''$, entonces $\psi(q')\sim\psi(q'')$. Con lo cual, supongamos $\psi(q')\sim\psi(q'')$, por demostrar que $q'\sim q''$, es decir $q'\cap q''\neq\emptyset$ en $G-u_2$. Supongamos $q'\cap q''=\emptyset$, como ya se observo,
+\begin{equation*}
+\begin{aligned}
+q' &\subseteq \psi(q') \\
+q'' &\subseteq \psi(q''),
+\end{aligned}
+\end{equation*}
+entonces
+\begin{equation*}
+\psi(q')\cap \psi(q'')=\{u_2\},
+\end{equation*}
+pues $q'\cap q''=\emptyset$ en $G-u_2$. Por la proposición~\ref{P1.14} se sabe que los únicos elementos de $K(G-u_2)$, con $\psi(q)\neq q$, son $q=q_1-u_2$ y $q=q_2-u_2$, sin pérdida de generalidad, consideremos 
+\begin{equation*}
+\begin{aligned}
+q' &= q_1-u_2 \\
+q'' &= q_2-u_2,
+\end{aligned}
+\end{equation*}
+lo que es una contradicción, pues $u_1,u_2\in q_1\cap q_2$ y con lo cual $u_1\in (q_1-u_2)\cap (q_2-u_2)$. Por lo tanto $q'\cap q''\neq\emptyset$, es decir, $q'\sim q''$, como se quería.
+
+Por otro lado, de acuerdo a la proposición~\ref{P1.14}, la función $\psi$ es inyectiva, por lo tanto por demostrar que $\psi$ es sobreyectiva. Sea $q\in K(G)$. 
+\begin{itemize}
+\item Si $u_2\notin q$, entonces $q\in K(G-u_2)$ y $\psi(q)=q$.
+\item Si $u_2\in q$, entonces $q\in \{q_1,q_2\}$, $q-u_2\in K(G-u_2)$ y $\psi(q-u_2)=q$.
+\end{itemize}
+Dado que se cumple lo buscado en cualquiera de los dos casos, entonces $\psi$ es sobre y por lo tanto es un morfismo de gráficas. Este hecho implica que $u_2$ no es un vértice crítico, lo que es una contradicción, pues se supone que la gráfica $G$ es clan crítica.
+
+Se concluye que el conjunto de vértices en $q_1\cap q_2$, que solo están en $q_1,q_2$, consta de cuando mucho un sólo vértice.
+\end{proof}
 
 \section{Resultados}
 
