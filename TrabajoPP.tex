@@ -133,27 +133,23 @@ Por otro lado, supongamos que $q'\sim q''$, es decir $q'\cap q''\neq\emptyset$ e
 
 \end{proof}
 
-\begin{Lem}
-Sea $G$ una gráfica clan crítica. Sean $q_1,q_2$ dos clanes diferentes de $G$. Entonces el conjunto de vértices que está en $q_1\cap q_2$ y en ningún otro clan debe constar de como mucho de un solo vértice.
+\begin{Lem}\label{L1.15}
+Sea $G$ una gráfica clan crítica. Sean $q_1,q_2$ dos clanes diferentes de $G$. Entonces el conjunto de vértices que está en $q_1\cap q_2$ y en ningún otro clan debe constar de cuando mucho un solo vértice.
 \end{Lem}
 
 \begin{proof}
 Sean $q_1,q_2$ dos clanes diferentes de $G$ y $u_1,u_2$ vértices tales que $u_1,u_2\in q_1\cap q_2$ y que no pertenecen a ningún otro clan, con $u_1\neq u_2$. Por demostrar que $q_1-u_2$ y $q_2-u_2$ siguen siendo clanes diferentes en $G-u_2$.
 
-Sea $q_3$ un clan de $G$ tal que $q_3\notin \{q_1,q_2\}$. Si suponemos que $q_1-u_2\subseteq q_3$, entonces $u_1\in q_3$, pues $u_1 \in q_1-u_2$, lo que es una contradicción, dado que $u_1$ solo pertenece a los clanes $q_1,q_2$. Por otra parte, notemos que de acuerdo a la proposición~\ref{P1.14}, $q_1-u_2,q_2-u_2$ son clanes de $G-u_2$. Ahora bien, si 
-\begin{equation*}
-q_1-u_2\subseteq q_2-u_2,
-\end{equation*}
-entonces 
+Sea $q_3$ un clan de $G$ tal que $q_3\notin \{q_1,q_2\}$. Si suponemos que $q_1-u_2\subseteq q_3$, entonces $u_1\in q_3$, pues $u_1 \in q_1-u_2$, lo que es una contradicción, dado que $u_1$ solo pertenece a los clanes $q_1,q_2$. Por otra parte, notemos que de acuerdo a la proposición~\ref{P1.14}, $q_1-u_2,q_2-u_2$ son clanes de $G-u_2$. Ahora bien, si $q_1-u_2\subseteq q_2-u_2$, entonces 
 \begin{equation*}
 \begin{aligned}
-(q_1-u_2)\cup\{u_2\} &\subseteq (q_2-u_2)\cup\{u_2\},\quad\text{por lo tanto} \\
-q_1 &\subseteq q_2.
+(q_1-u_2)\cup\{u_2\} &\subseteq (q_2-u_2)\cup\{u_2\},\text{ por lo tanto }
+q_1 \subseteq q_2.
 \end{aligned}
 \end{equation*}
 Lo que supone una contradicción, pues $q_1,q_2$ son clanes distintos de $G$. De esta manera $q_1-u_2,q_2-u_2$ son clanes distintos de $G-u_2$.
 
-Por otra parte, sea $\psi:K(G-u_2)\to K(G)$ tal que $\psi(q')=q$ y $q',q''$ clanes distintos de $G-u_2$. Por demostrar que $\psi$ es un morfismo de gráficas y además se satisface que $q'\sim q''$ si, y solo si, $\psi(q')\sim\psi(q'')$.
+Por otra parte, sea $\psi:K(G-u_2)\to K(G)$ tal que $\psi(q')=q$ y $q',q''$ clanes distintos de $G-u_2$. Por demostrar que $\psi$ es un morfismo de gráficas, satisface que $q'\sim q''$ si, y solo si, $\psi(q')\sim\psi(q'')$.
 
 En la proposición~\ref{P1.14} ya se demostró que si $q'\sim q''$, entonces $\psi(q')\sim\psi(q'')$. Con lo cual, supongamos $\psi(q')\sim\psi(q'')$, por demostrar que $q'\sim q''$, es decir $q'\cap q''\neq\emptyset$ en $G-u_2$. Supongamos $q'\cap q''=\emptyset$, como ya se observo,
 \begin{equation*}
@@ -184,6 +180,39 @@ Dado que se cumple lo buscado en cualquiera de los dos casos, entonces $\psi$ es
 
 Se concluye que el conjunto de vértices en $q_1\cap q_2$, que solo están en $q_1,q_2$, consta de cuando mucho un sólo vértice.
 \end{proof}
+
+\begin{Lem}\label{L1.16}
+Sea $G$ una gráfica clan crítica. Sean $q_1,q_2,\dots,q_n$ $n$ clanes diferentes de $G$. Entonces el conjunto de vértices que está en $q_1\cap q_2\cap\dots\cap q_n$ y en ningún otro clan debe constar de cuando mucho un solo vértice.
+\end{Lem}
+\begin{proof}
+Sean $q_1,q_2,\dots,q_n$ clanes diferentes de $G$ y $u_1,u_2$ vértices tales que $u_1,u_2\in q_1\cap q_2\cap\dots\cap q_n$ y que no pertenecen a ningún otro clan, con $u_1\neq u_2$. Por demostrar que $q_1-u_2,q_2-u_,\dots,q_n-u_2$ siguen siendo clanes diferentes en $G-u_2$.
+
+Sea $\hat{q}$ un clan de $G$ tal que $\hat{q}\notin\{q_1,q_2,\dots,q_n\}$.
+Si suponemos que $q_i-u_2\subseteq \hat{q}$, $i\in\{1,2,\dots,n\}$, entonces $u_1\in \hat{q}$, pues $u_1\in q_i-u_2$, lo que es una contradicción, dado que $u_1$ solo pertenece a los clanes $q_1,q_2,\dots,q_n$. Por otra parte, notemos que de acuerdo a la proposición~\ref{P1.14}, $q_1-u_2,q_2-u_,\dots,q_n-u_2$ son clanes de $G-u_2$. Ahora bien, si $q_i-u_2\subseteq q_{k}-u_2$, $i\neq k$ y $i,k\in\{1,2,\dots,n\}$, entonces
+\begin{equation*}
+(q_i-u_2)\cup\{u_2\} \subseteq (q_{k}-u_2)\cup\{u_2\},\text{ por lo tanto }q_i \subseteq q_{k}.
+\end{equation*}
+Lo que supone una contradicción, pues $q_i,q_{k}$ son clanes distintos de $G$. De esta manera $q_1-u_2,q_2-u_,\dots,q_n-u_2$ son clanes distintos de $G-u_2$.
+
+Por otra parte, sea $\psi:K(G-u_2)\to K(G)$ tal que $\psi(q')=q$ y $q',q''$ clanes distintos de $G-u_2$. Por demostrar que $\psi$ es un morfismo de gráficas, satisface que $q'\sim q''$ si, y solo si, $\psi(q')\sim\psi(q'')$.
+
+En la proposición~\ref{P1.14} ya se demostró que si $q'\sim q''$, entonces $\psi(q')\sim\psi(q'')$. Con lo cual, supongamos $\psi(q')\sim\psi(q'')$, por demostrar que $q'\sim q''$, es decir $q'\cap q''\neq\emptyset$ en $G-u_2$. Supongamos $q'\cap q''$. Como ya se observo,
+\begin{equation*}
+\begin{aligned}
+q' &\subseteq \psi(q') \\
+q'' &\subseteq \psi(q''),
+\end{aligned}
+\end{equation*}
+entonces
+\begin{equation*}
+\psi(q')\cap\psi(q'')=\{u_2\},
+\end{equation*}
+pues $q'\cap q''=\emptyset$ en $G-u_2$. De acuerdo a la proposición~\ref{P1.14}, los únicos elementos de $K(G-u_2)$ con $\psi(q)\neq q$, son 
+
+
+
+\end{proof}
+
 
 \section{Resultados}
 
@@ -220,24 +249,22 @@ Supongamos existen $n$ vértices en dicha intersección de los tres clanes, con 
 En busca de saber qué gráfica es $G$, consideramos las intersecciones que pueden tener los clanes, con lo cual, resultan los siguientes casos a tratar, los cuales están considerando el hecho de la existencia del vértice $u_1$.
 \begin{itemize}
 \item Caso 1. 
-Los clanes de $G$ se intersecan únicamente en el vértice $u_1$, es decir $q_1\cap q_2\cap q_3=\left\{u_1\right\}$, $(q_1\cap q_3)\setminus q_2=\emptyset  \text{, }(q_2\cap q_3)\setminus q_1=\emptyset$ y $(q_1\cap q_2)\setminus q_3=\emptyset$, como se muestra en la figura~\ref{F2}.
+Cualesquiera dos clanes de $G$ se intersecan únicamente en el vértice $u_1$, es decir $q_1\cap q_2\cap q_3=\left\{u_1\right\}$, $(q_1\cap q_3)\setminus q_2=\emptyset  \text{, }(q_2\cap q_3)\setminus q_1=\emptyset$ y $(q_1\cap q_2)\setminus q_3=\emptyset$, como se muestra en la figura~\ref{F2}.
 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[scale=1.2]{Fig1.pdf}
 	\caption{Esquema de los clanes de la gráfica $G$ correspondiente al caso 1.\label{F2}}
 \end{figure}
+Supongamos el clan $q_1$ está constituido por $n$ vértices, con $n>2$, de esta manera gráfica $G$ no cumpliría la condición de ser clan crítica, pues resultaría que $K(G)=K(G-\hat{u})$, para cualquier $\hat{u}\in q_1$, $\hat{u}\neq u_1$. Este razonamiento es aplicable para los clanes $q_2,q_3$, por lo tanto cada clan consta únicamente de dos vértices, con lo cual la gráfica $G=G(4,3,3)$.
 
-De primera instancia, los tres clanes pueden estar constituidos por $n$ vértices (no necesariamente la misma $n$ para cada uno de los clanes), sin embargo, de considerar un $n>2$, la gráfica $G$ no cumpliría la condición de ser clan crítica, pues resultaría que $K(G)=K(G-\hat{u})$, para cualquier $\hat{u}\in V(q_i)$, $i\in\{1,2,3\}$ y $\hat{u}\neq u_1$. Por lo tanto cada clan consta únicamente de dos vértices, con lo cual la gráfica $G=G(4,3,3)$.
 
 \item Caso 2.
-Existe una intersección dos a dos entre los clanes, de más de un vértice, considerando el vértice $u_1$. Sin pérdida de generalidad, supongamos que el clan $q_3$ interseca al clan $q_1$ en un vértice $u_2\in V(G)$, así como a $q_2$ en un vértice $u_3\in V(G)$, esto es 
+Existe una intersección dos a dos entre los clanes, de más de un vértice, considerando el vértice $u_1$. Sin pérdida de generalidad, supongamos que el clan $q_3$ interseca al clan $q_1$, así como a $q_2$, por demostrar
 \begin{equation}\label{E1.1}
 \left\{u_2\right\}=(q_1\cap q_3)\setminus q_2 \quad \text{y} \quad \left\{u_3\right\}=(q_2\cap q_3)\setminus q_1.
 \end{equation}
-Como se muestra en la figura~\ref{F3}.
-
-El argumento de que no exista más de un vértice en cada uno de los conjuntos en \eqref{E1.1}, es análogo al razonamiento expuesto al inicio de la prueba, es decir, de existir más de un vértice, éstos formarían un nuevo clan de $G$, lo que contradice la hipótesis de que $K(G)=K_3$, por lo tanto, es correcta la expresión \eqref{E1.1}.
+Como se muestra en la figura~\ref{F3}. Sin embargo se sigue de manera inmediata que por el lema~\ref{L1.15} es correcta la expresión \eqref{E1.1}, pues el conjunto de vértices que están en $q_i\cap q_3$, $i=\{1,2\}$, y en ningún otro clan debe constar de cuando mucho un solo vértice, a dicho vértice se le etiqueto como $u_2,u_3$ respectivamente.
 
 \begin{figure}[!htbp]
 	\centering
