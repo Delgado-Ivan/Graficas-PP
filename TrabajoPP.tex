@@ -48,7 +48,7 @@
 
 	\vfill
 
-	{\LARGE Clasificación de gráficas de clanes pequeñas}\\[2cm]
+	{\LARGE Clasificación de gráficas de clan--críticas}\\[2cm]
 
 	\vfill
 \end{titlepage}
@@ -113,16 +113,16 @@ Un vértice $v$ es \emph{clan crítico} si $K(G)\neq K(G-v)$. Una gráfica $G$ e
 En este trabajo se consideran gráficas simples, finitas, sin lazos y conexas.
 
 \begin{proposition}[\citealt{Escalante:1974}]\label{P1.14}
-Sea $G$ una gráfica y $u$ un vértice de $G$. $K(G-u)$ no tiene más clanes que $K(G)$, mas precisamente, cualquier clan de $G-u$ es de la forma $q-u$ para $q\in K(G)$.
+Sea $G$ una gráfica y $u$ un vértice de $G$. $K(G-u)$ no tiene más clanes que $K(G)$, mas precisamente, cualquier clan de $G-u$ es de la forma $q-u$ para $q\in K(G)$. Además, $K(G-u)$ es una subgráfica inducida de $K(G)$.
 \end{proposition}
 
 \begin{proof}
 Sea $q'$ un clan de $G-u$, entonces $q'$ es una completa en $G$. Sea $q$ un clan de $G$ tal que $q'\subseteq q$. Por demostrar que $q'=q-u$.
 
-Si $q'\neq q$ entonces $q'$ no es un clan en $G$, por lo tanto existe un vértice $v\in G$ tal que $q' \cup \{v\}$ es una completa. Ahora bien, si $v\neq u$ entonces $q'\subseteq q' \cup \{v\}$ en $G-u$, lo cual es una contradicción, pues $q'$ es un clan en $G-u$, por lo tanto $v=u$. De esta manera el único vértice $v\in G$ que puede ser añadido a $q'$ de tal manera que $q'\cup \{v\}$ sea una completa es $u$, entonces $q'\cup \{u\}$ es un clan de $G$.
-Veamos hora que cualquier vértice $v'$ en $q-q'$ tiene la propiedad de que $q'\cup \{v'\}$ es una completa de $G$. Sin embargo, por otro lado como se mostró anteriormente, el único vértice con tal propiedad es $u$, por lo tanto, $q-q'=\{u\}$, es decir, $q=q'\cup\{u\}$.
+Si $q'\neq q$ entonces $q'$ no es un clan en $G$, por lo tanto existe un vértice $v\in G$ tal que $q' \cup \{v\}$ es una completa. Ahora bien, si $v\neq u$ entonces $q'\subseteq q' \cup \{v\}$ en $G-u$, lo cual es una contradicción, pues $q'$ es un clan en $G-u$, por lo tanto $v=u$. De esta manera el único vértice $v\in G$ que cumple que $q'\cup \{v\}$ sea una completa es $u$, entonces $q'\cup \{u\}$ es un clan de $G$.
+Notemos que cualquier vértice $v'$ en $q-q'$ tiene la propiedad de que $q'\cup \{v'\}$ es una completa de $G$. Sin embargo, por otro lado como se mostró anteriormente, el único vértice con tal propiedad es $u$, por lo tanto, $q-q'=\{u\}$, es decir, $q=q'\cup\{u\}$. Ahora, si $q= q'$, entonces $u\not\in q'$, pues $q'\subseteq G-u$. Por lo tanto $q'=q'-u=q-u$. 
 
-Definamos ahora una función $\psi:K(G-u)\to K(G)$ tal que $\psi(q')=q$. Por demostrar que la función $\psi$ es inyectiva, consideremos un nuevo clan $q''$ en $G-u$ tal que $q''\subseteq q$ en $G$. Si $\psi(q')=\psi(q'')=q$, demostraremos que $q'=q''$. Supongamos que $q'\neq q''$, resultan los siguientes casos:
+Definamos ahora una función $\psi:K(G-u)\to K(G)$ tal que $\psi(q')=q$ (donde $q$ es un clan de $G$ tal que $q'\subseteq q$). Por demostrar que la función $\psi$ es inyectiva. Consideremos un nuevo clan $q''$ en $G-u$ tal que $q''\subseteq q$ en $G$. Si $\psi(q')=\psi(q'')=q$, demostraremos que $q'=q''$. Supongamos que $q'\neq q''$, resultan los siguientes casos:
 \begin{enumerate}
 \item El vértice $u\in q$, resulta que $q'=q\setminus \{u\}$, por otra parte como $q''$ es un clan de $G-u$, entonces $q''=q-u$ y por lo tanto $q'=q''$, lo cual es una contradicción, pues se había supuesto que $q'\neq q''$.
 \item El vértice $u \notin q$, con lo cual resulta de manera inmediata que $q'=q$ y $q''=q$, entonces $q'=q''$, contradicción, pues se supuso que $q'\neq q''$.
@@ -140,7 +140,9 @@ Sea $G$ una gráfica clan crítica. Sean $q_1,q_2$ dos clanes diferentes de $G$.
 \begin{proof}
 Sean $q_1,q_2$ dos clanes diferentes de $G$ y $u_1,u_2$ vértices tales que $u_1,u_2\in q_1\cap q_2$ y que no pertenecen a ningún otro clan, con $u_1\neq u_2$. Por demostrar que $q_1-u_2$ y $q_2-u_2$ siguen siendo clanes diferentes en $G-u_2$.
 
-Sea $q_3$ un clan de $G$ tal que $q_3\notin \{q_1,q_2\}$. Si suponemos que $q_1-u_2\subseteq q_3$, entonces $u_1\in q_3$, pues $u_1 \in q_1-u_2$, lo que es una contradicción, dado que $u_1$ solo pertenece a los clanes $q_1,q_2$. Por otra parte, notemos que de acuerdo a la proposición~\ref{P1.14}, $q_1-u_2,q_2-u_2$ son clanes de $G-u_2$. Ahora bien, si $q_1-u_2\subseteq q_2-u_2$, entonces 
+Sea $q_3$ un clan de $G$ tal que $q_3\notin \{q_1,q_2\}$. Si suponemos que $q_1-u_2\subseteq q_3$, entonces $u_1\in q_3$, pues $u_1 \in q_1-u_2$, lo que es una contradicción, dado que $u_1$ solo pertenece a los clanes $q_1,q_2$. Esto quiere decir que $q_{1}-u_{2}$ es un clan en $G-u_{2}$, pues no está contenido propiamente en un clan de $G$ diferente de $q_{1}$ y $q_{2}$ (estamos usando la proposición~\ref{P1.14})
+%Por otra parte, notemos que de acuerdo a la proposición~\ref{P1.14}, $q_1-u_2,q_2-u_2$ son clanes de $G-u_2$.
+Ahora bien, si $q_1-u_2\subseteq q_2-u_2$, entonces 
 \begin{equation*}
 \begin{aligned}
 (q_1-u_2)\cup\{u_2\} &\subseteq (q_2-u_2)\cup\{u_2\},\text{ por lo tanto }
@@ -149,9 +151,9 @@ q_1 \subseteq q_2.
 \end{equation*}
 Lo que supone una contradicción, pues $q_1,q_2$ son clanes distintos de $G$. De esta manera $q_1-u_2,q_2-u_2$ son clanes distintos de $G-u_2$.
 
-Por otra parte, sea $\psi:K(G-u_2)\to K(G)$ tal que $\psi(q')=q$ y $q',q''$ clanes distintos de $G-u_2$. Por demostrar que $\psi$ es un morfismo de gráficas, satisface que $q'\sim q''$ si, y solo si, $\psi(q')\sim\psi(q'')$.
+Por otra parte, sea $\psi:K(G-u_2)\to K(G)$ tal que $\psi(q')=q$ (donde $q$ es un clan de $G$ tal que $q'\subseteq q$) y $q',q''$ clanes distintos de $G-u_2$. Por demostrar que $\psi$ es un morfismo de gráficas, es decir, que satisface que $q'\sim q''$ si, y solo si, $\psi(q')\sim\psi(q'')$.
 
-En la proposición~\ref{P1.14} ya se demostró que si $q'\sim q''$, entonces $\psi(q')\sim\psi(q'')$. Con lo cual, supongamos $\psi(q')\sim\psi(q'')$, por demostrar que $q'\sim q''$, es decir $q'\cap q''\neq\emptyset$ en $G-u_2$. Supongamos $q'\cap q''=\emptyset$, como ya se observo,
+En la proposición~\ref{P1.14} ya se demostró que si $q'\sim q''$, entonces $\psi(q')\sim\psi(q'')$. Con lo cual, supongamos $\psi(q')\sim\psi(q'')$, por demostrar que $q'\sim q''$, es decir $q'\cap q''\neq\emptyset$ en $G-u_2$. Supongamos $q'\cap q''=\emptyset$, como ya se observó,
 \begin{equation*}
 \begin{aligned}
 q' &\subseteq \psi(q') \\
